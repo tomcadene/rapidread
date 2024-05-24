@@ -2,7 +2,7 @@
 This repository contains a JavaScript implementation for a "Bionic Reading" mode toggle feature. The script enhances text readability by making parts of each word bold based on their length. This feature can be toggled on and off via a slider button, and the user's preference is saved in localStorage.
 
 ### Demo
-- A demo is present here: https://tomcadene.com/.
+- A demo is present here: https://tomcadene.com/projects/rapidread.html.
 
 ### Features
 - Bionic Reading Mode: Highlights parts of words to improve readability.
