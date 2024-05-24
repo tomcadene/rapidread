@@ -1,18 +1,17 @@
 ### Description
-This repository contains a JavaScript implementation for a "Bionic Reading" mode toggle feature. The script enhances text readability by making parts of each word bold based on their length. This feature can be toggled on and off via a button, and the user's preference is saved in localStorage.
+This repository contains a JavaScript implementation for a "Bionic Reading" mode toggle feature. The script enhances text readability by making parts of each word bold based on their length. This feature can be toggled on and off via a slider button, and the user's preference is saved in localStorage.
 
 ### Features
 - Bionic Reading Mode: Highlights parts of words to improve readability.
-- Toggle Button: Easily enable or disable Bionic Reading mode with a single click.
+- Slider Toggle Button: Easily enable or disable Bionic Reading mode with a stylish slider switch.
 - Local Storage: Remembers the user's preference even after the page is reloaded.
 - Compatibility: Works with common text elements like headers (h3 to h6), paragraphs (p), and divs (div).
 
 ### Usage
 - Include the JavaScript file in your HTML.
-- Add an element with the ID bionic-reading-toggle to serve as the toggle button.
+- Add the slider switch HTML and CSS to your page to serve as the toggle button.
 - The script will automatically process the specified elements on the page and apply the Bionic Reading mode based on the user's preference.
-
-### Example
+- Add the provided HTML and CSS for the slider button to your project.
 
 ### Installation
 - Clone the repository.
