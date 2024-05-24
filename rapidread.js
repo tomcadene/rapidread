@@ -22,7 +22,10 @@ document.addEventListener("DOMContentLoaded", function() {
             const newContent = words.map(word => /\w/.test(word) ? makeBold(word) : word).join('');
             const newNode = document.createElement('span');
             newNode.innerHTML = newContent;
-            node.parentNode.replaceChild(newNode, node);
+            while (newNode.firstChild) {
+                node.parentNode.insertBefore(newNode.firstChild, node);
+            }
+            node.parentNode.removeChild(node);
         } else if (node.nodeType === ELEMENT_NODE && TEXT_CONTAINERS.includes(node.nodeName)) {
             node.childNodes.forEach(child => processTextNodes(child));
         }
@@ -31,11 +34,16 @@ document.addEventListener("DOMContentLoaded", function() {
     // Function to restore the original text
     function restoreOriginalText(node) {
         if (node.nodeType === ELEMENT_NODE && TEXT_CONTAINERS.includes(node.nodeName)) {
-            const spans = node.querySelectorAll('span');
-            spans.forEach(span => {
-                if (span.querySelector('b.bionic-reading')) {
-                    const textNode = document.createTextNode(span.textContent);
-                    span.parentNode.replaceChild(textNode, span);
+            node.childNodes.forEach(child => {
+                if (child.nodeType === ELEMENT_NODE && child.tagName === 'B' && child.classList.contains('bionic-reading')) {
+                    const textNode = document.createTextNode(child.textContent + (child.nextSibling ? child.nextSibling.textContent : ''));
+                    const nextSibling = child.nextSibling;
+                    child.parentNode.replaceChild(textNode, child);
+                    if (nextSibling) {
+                        nextSibling.parentNode.removeChild(nextSibling);
+                    }
+                } else {
+                    restoreOriginalText(child);
                 }
             });
         }
