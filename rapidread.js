@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const TOGGLE_BUTTON_ID = 'bionic-reading-toggle';
     const TEXT_NODE = 3;
     const ELEMENT_NODE = 1;
-    const HEADINGS = ["H3", "H4", "H5", "H6"];
     const TEXT_CONTAINERS = ["H3", "H4", "H5", "H6", "P", "DIV"];
     
     const toggleButton = document.getElementById(TOGGLE_BUTTON_ID);
@@ -63,6 +62,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Check localStorage for bionic reading preference
     if (localStorage.getItem('bionicReadingEnabled') === 'true') {
+        toggleButton.checked = true;
         toggleBionicReading();
     }
 });
