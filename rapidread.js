@@ -20,12 +20,8 @@ document.addEventListener("DOMContentLoaded", function() {
         if (node.nodeType === TEXT_NODE) {
             const words = node.nodeValue.split(/\b/);
             const newContent = words.map(word => /\w/.test(word) ? makeBold(word) : word).join('');
-            const newNode = document.createElement('span');
-            newNode.innerHTML = newContent;
-            while (newNode.firstChild) {
-                node.parentNode.insertBefore(newNode.firstChild, node);
-            }
-            node.parentNode.removeChild(node);
+            const parent = node.parentNode;
+            parent.innerHTML = parent.innerHTML.replace(node.nodeValue, newContent);
         } else if (node.nodeType === ELEMENT_NODE && TEXT_CONTAINERS.includes(node.nodeName)) {
             node.childNodes.forEach(child => processTextNodes(child));
         }
@@ -34,18 +30,8 @@ document.addEventListener("DOMContentLoaded", function() {
     // Function to restore the original text
     function restoreOriginalText(node) {
         if (node.nodeType === ELEMENT_NODE && TEXT_CONTAINERS.includes(node.nodeName)) {
-            node.childNodes.forEach(child => {
-                if (child.nodeType === ELEMENT_NODE && child.tagName === 'B' && child.classList.contains('bionic-reading')) {
-                    const textNode = document.createTextNode(child.textContent + (child.nextSibling ? child.nextSibling.textContent : ''));
-                    const nextSibling = child.nextSibling;
-                    child.parentNode.replaceChild(textNode, child);
-                    if (nextSibling) {
-                        nextSibling.parentNode.removeChild(nextSibling);
-                    }
-                } else {
-                    restoreOriginalText(child);
-                }
-            });
+            const originalText = node.innerHTML.replace(/<b class="bionic-reading">/g, '').replace(/<\/b>/g, '');
+            node.innerHTML = originalText;
         }
     }
 
