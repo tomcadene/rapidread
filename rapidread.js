@@ -71,11 +71,10 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-// CSS to be added to the style section or a stylesheet
-const style = document.createElement('style');
+const style = document.createElement('rr-style');
 style.innerHTML = `
     .transparent {
-        opacity: 0.5; /* Adjust the transparency level as needed */
+        opacity: 0.75; /* Adjust the transparency level as needed */
     }
     .bionic-reading {
         font-weight: bold;
