@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-const style = document.createElement('rr-style');
+const style = document.createElement('style');
 style.innerHTML = `
     .transparent {
         opacity: 0.75; /* Adjust the transparency level as needed */
