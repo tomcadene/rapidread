@@ -1,14 +1,16 @@
 ### Description
-This repository contains a JavaScript implementation for a "Bionic Reading" mode toggle feature. The script enhances text readability by making parts of each word bold based on their length. This feature can be toggled on and off via a slider button, and the user's preference is saved in localStorage.
+RapidRead is a JavaScript utility that dynamically enhances the readability of web content by bolding the first few letters of words and making the remaining letters slightly transparent. This technique, inspired by bionic reading methods, aims to improve reading speed and comprehension.. This feature can be toggled on and off via a slider button, and the user's preference is saved in localStorage.
 
 ### Demo
 - A demo is present here: https://tomcadene.com/projects/rapidread.html.
 
 ### Features
-- Bionic Reading Mode: Highlights parts of words to improve readability.
-- Slider Toggle Button: Easily enable or disable Bionic Reading mode with a stylish slider switch.
-- Local Storage: Remembers the user's preference even after the page is reloaded.
-- Compatibility: Works with common text elements like headers (h3 to h6), paragraphs (p), and divs (div).
+- Bolds the initial characters of words based on their length.
+- Makes non-bolded letters slightly transparent for better visual distinction.
+- Applies enhancements to various HTML elements (H3, H4, H5, H6, P, DIV).
+- Toggle button to enable or disable bionic reading mode.
+- Stores user preference in local storage for persistent settings.
+- Easy to integrate into existing web projects.
 
 ### Usage
 - Include the JavaScript file in your HTML.
