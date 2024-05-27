@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const TOGGLE_BUTTON_ID = 'bionic-reading-toggle';
     const TEXT_NODE = 3;
     const ELEMENT_NODE = 1;
@@ -9,11 +9,11 @@ document.addEventListener("DOMContentLoaded", function() {
     // Function to make parts of the word bold based on its length and make non-bold letters slightly transparent
     function makeBold(word) {
         const boldLength = word.length <= 2 ? 1 :
-                           word.length <= 4 ? 2 :
-                           word.length <= 6 ? 3 :
-                           word.length <= 8 ? 4 :
-                           word.length <= 10 ? 5 :
-                           word.length <= 12 ? 6 : 7;
+            word.length <= 4 ? 2 :
+                word.length <= 6 ? 3 :
+                    word.length <= 8 ? 4 :
+                        word.length <= 10 ? 5 :
+                            word.length <= 12 ? 6 : 7;
         return `<b class="bionic-reading">${word.substring(0, boldLength)}</b><span class="transparent">${word.substring(boldLength)}</span>`;
     }
 
