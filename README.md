@@ -1,8 +1,7 @@
 ### Description
-RapidRead is a JavaScript utility that dynamically enhances the readability of web content by bolding the first few letters of words and making the remaining letters slightly transparent. This technique, inspired by bionic reading methods, aims to improve reading speed and comprehension.. This feature can be toggled on and off via a slider button, and the user's preference is saved in localStorage.
+RapidRead is a JavaScript utility that dynamically enhances the readability of web content by bolding the first few letters of words and making the remaining letters slightly transparent. This technique, inspired by bionic reading methods, aims to improve reading speed and comprehension. This feature can be toggled on and off via a slider button, and the user's preference is saved in localStorage.
 
 ![rr-difference](https://github.com/tomcadene/rapidread/assets/165381734/2e62a7b6-5775-4274-8dbd-08b9b31cca07)
-
 
 ### Demo
 - A demo is present here: https://tomcadene.com/projects/rapidread.html.
