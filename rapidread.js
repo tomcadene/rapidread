@@ -45,7 +45,6 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    
     // Function to toggle bionic reading mode
     function toggleBionicReading() {
         const elements = document.querySelectorAll(TEXT_CONTAINERS.join(', '));
