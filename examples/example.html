@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Bionic Reading Example</title>
     <style>
-
         body {
             font-family: Arial, Helvetica, sans-serif;
         }
+
         /* Slider CSS */
         .switch {
             position: relative;
@@ -15,11 +16,13 @@
             width: 60px;
             height: 34px;
         }
+
         .switch input {
             opacity: 0;
             width: 0;
             height: 0;
         }
+
         .slider {
             position: absolute;
             cursor: pointer;
@@ -31,6 +34,7 @@
             transition: .4s;
             border-radius: 34px;
         }
+
         .slider:before {
             position: absolute;
             content: "";
@@ -42,12 +46,15 @@
             transition: .4s;
             border-radius: 50%;
         }
-        input:checked + .slider {
+
+        input:checked+.slider {
             background-color: #2196F3;
         }
-        input:checked + .slider:before {
+
+        input:checked+.slider:before {
             transform: translateX(26px);
         }
+
         /* Optional: Style for the active state */
         .active {
             background-color: #2196F3;
@@ -55,6 +62,7 @@
     </style>
     <script src="../rapidread.js" defer></script>
 </head>
+
 <body>
     <label class="switch">
         <input type="checkbox" id="bionic-reading-toggle">
@@ -66,6 +74,9 @@
     <h6>Sample Heading H6</h6>
     <div>This is a sample div with text.</div>
     <p>This is an example paragraph to demonstrate the Bionic Reading feature.</p>
-    <div><p>This is a sample div with p text inside.</p></div>
+    <div>
+        <p>This is a sample div with p text inside.</p>
+    </div>
 </body>
+
 </html>
