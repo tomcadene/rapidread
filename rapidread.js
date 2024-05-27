@@ -21,25 +21,23 @@ document.addEventListener("DOMContentLoaded", function() {
             const words = node.nodeValue.split(/\b/);
             const newContent = words.map(word => /\w/.test(word) ? makeBold(word) : word).join('');
             const newNode = document.createElement('span');
-            newNode.classList.add('bionic-processed');
-            newNode.dataset.originalText = node.nodeValue;
             newNode.innerHTML = newContent;
             node.parentNode.replaceChild(newNode, node);
-        } else if (node.nodeType === ELEMENT_NODE && !node.classList.contains('bionic-processed')) {
+        } else if (node.nodeType === ELEMENT_NODE && TEXT_CONTAINERS.includes(node.nodeName)) {
             node.childNodes.forEach(child => processTextNodes(child));
         }
     }
 
     // Function to restore the original text
     function restoreOriginalText(node) {
-        if (node.nodeType === ELEMENT_NODE) {
-            const children = Array.from(node.childNodes);
-            children.forEach(child => restoreOriginalText(child));
-            if (node.tagName === 'SPAN' && node.classList.contains('bionic-processed')) {
-                const originalText = node.dataset.originalText;
-                const textNode = document.createTextNode(originalText);
-                node.parentNode.replaceChild(textNode, node);
-            }
+        if (node.nodeType === ELEMENT_NODE && TEXT_CONTAINERS.includes(node.nodeName)) {
+            const spans = node.querySelectorAll('span');
+            spans.forEach(span => {
+                if (span.querySelector('b.bionic-reading')) {
+                    const textNode = document.createTextNode(span.textContent);
+                    span.parentNode.replaceChild(textNode, span);
+                }
+            });
         }
     }
 
@@ -48,11 +46,11 @@ document.addEventListener("DOMContentLoaded", function() {
         const elements = document.querySelectorAll(TEXT_CONTAINERS.join(', '));
         elements.forEach(element => {
             if (element.classList.contains('bionic-processed')) {
-                restoreOriginalText(element);
                 element.classList.remove('bionic-processed');
+                restoreOriginalText(element);
             } else {
-                processTextNodes(element);
                 element.classList.add('bionic-processed');
+                processTextNodes(element);
             }
         });
         toggleButton.classList.toggle('active');
