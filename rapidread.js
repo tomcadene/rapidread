@@ -20,9 +20,13 @@ document.addEventListener("DOMContentLoaded", function() {
         if (node.nodeType === TEXT_NODE) {
             const words = node.nodeValue.split(/\b/);
             const newContent = words.map(word => /\w/.test(word) ? makeBold(word) : word).join('');
-            const newNode = document.createElement('span');
-            newNode.innerHTML = newContent;
-            node.parentNode.replaceChild(newNode, node);
+            if (/\w/.test(node.nodeValue)) {
+                const newNode = document.createElement('span');
+                newNode.innerHTML = newContent;
+                node.parentNode.replaceChild(newNode, node);
+            } else {
+                node.nodeValue = newContent;  // directly modify the node value if no words to bold
+            }
         } else if (node.nodeType === ELEMENT_NODE && TEXT_CONTAINERS.includes(node.nodeName)) {
             node.childNodes.forEach(child => processTextNodes(child));
         }
