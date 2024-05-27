@@ -3,16 +3,16 @@ document.addEventListener("DOMContentLoaded", function() {
     const TEXT_NODE = 3;
     const ELEMENT_NODE = 1;
     const TEXT_CONTAINERS = ["H3", "H4", "H5", "H6", "P", "DIV"];
-    
+
     const toggleButton = document.getElementById(TOGGLE_BUTTON_ID);
 
-    // Function to make parts of the word bold based on its length
+    // Function to make parts of the word bold based on its length and make non-bold letters slightly transparent
     function makeBold(word) {
         const boldLength = word.length <= 2 ? 1 :
                            word.length <= 4 ? 2 :
                            word.length <= 6 ? 3 :
                            word.length <= 8 ? 4 : 5;
-        return `<b class="bionic-reading">${word.substring(0, boldLength)}</b>${word.substring(boldLength)}`;
+        return `<b class="bionic-reading">${word.substring(0, boldLength)}</b><span class="transparent">${word.substring(boldLength)}</span>`;
     }
 
     // Function to process all text nodes within specified elements
@@ -70,3 +70,15 @@ document.addEventListener("DOMContentLoaded", function() {
         toggleBionicReading();
     }
 });
+
+// CSS to be added to the style section or a stylesheet
+const style = document.createElement('style');
+style.innerHTML = `
+    .transparent {
+        opacity: 0.5; /* Adjust the transparency level as needed */
+    }
+    .bionic-reading {
+        font-weight: bold;
+    }
+`;
+document.head.appendChild(style);
