@@ -11,6 +11,7 @@ RapidRead is a JavaScript utility that dynamically enhances the readability of w
 - Makes non-bolded letters slightly transparent for better visual distinction.
 - Applies enhancements to various HTML elements (H3, H4, H5, H6, P, DIV).
 - Toggle button to enable or disable bionic reading mode.
+- Support light and dark theme.
 - Stores user preference in local storage for persistent settings.
 - Easy to integrate into existing web projects.
 
