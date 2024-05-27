@@ -11,7 +11,9 @@ document.addEventListener("DOMContentLoaded", function() {
         const boldLength = word.length <= 2 ? 1 :
                            word.length <= 4 ? 2 :
                            word.length <= 6 ? 3 :
-                           word.length <= 8 ? 4 : 5;
+                           word.length <= 8 ? 4 :
+                           word.length <= 10 ? 5 :
+                           word.length <= 12 ? 6 : 7;
         return `<b class="bionic-reading">${word.substring(0, boldLength)}</b><span class="transparent">${word.substring(boldLength)}</span>`;
     }
 
