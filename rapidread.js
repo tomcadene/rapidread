@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const toggleButton = document.getElementById(TOGGLE_BUTTON_ID);
 
-    // Function to make parts of the word bold based on its length and make non-bold letters slightly transparent
+    // Function to make parts of the word bold based on its length
     function makeBold(word) {
         const boldLength = word.length <= 2 ? 1 :
             word.length <= 4 ? 2 :
@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     word.length <= 8 ? 4 :
                         word.length <= 10 ? 5 :
                             word.length <= 12 ? 6 : 7;
-        return `<b class="bionic-reading">${word.substring(0, boldLength)}</b><span class="transparent">${word.substring(boldLength)}</span>`;
+        return `<b class="bionic-reading">${word.substring(0, boldLength)}</b>${word.substring(boldLength)}`;
     }
 
     // Function to process all text nodes within specified elements
@@ -75,9 +75,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 const style = document.createElement('style');
 style.innerHTML = `
-    .transparent {
-        opacity: 0.75; /* Adjust the transparency level as needed */
-    }
     .bionic-reading {
         font-weight: bold;
     }
