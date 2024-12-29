@@ -4,7 +4,7 @@ RapidRead is a JavaScript utility that dynamically enhances the readability of w
 ![rr-differences](https://github.com/tomcadene/rapidread/assets/165381734/a841affd-7a74-42ea-8476-107d365bf9a6)
 
 ### Demo
-- A demo is present here: https://tomcadene.com/projects/rapidread.html.
+- A demo is present here: https://tomcadene.com/projects/rapidread.html
 
 ### Features
 - Bolds the initial characters of words based on their length.
@@ -24,7 +24,7 @@ RapidRead is a JavaScript utility that dynamically enhances the readability of w
 ### Installation
 - Clone the repository.
 - Add the rapidread.js script to your project.
-- Include the script in your HTML file as shown in the example.
+- Include the script in your HTML file as shown in the rapidrea/examples/example.html file.
 
 ### Contributing
 - Contributions are welcome! Please feel free to submit a pull request or open an issue for any bugs or feature requests.
