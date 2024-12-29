@@ -24,7 +24,7 @@ RapidRead is a JavaScript utility that dynamically enhances the readability of w
 ### Installation
 - Clone the repository.
 - Add the rapidread.js script to your project.
-- Include the script in your HTML file as shown in the `rapidrea/examples/example.html` file.
+- Include the script in your HTML file as shown in the `rapidread/examples/example.html` file.
 
 ### Contributing
 - Contributions are welcome! Please feel free to submit a pull request or open an issue for any bugs or feature requests.
